@@ -1,4 +1,5 @@
 body {
+  color: #bf3a5d;
   font-size: 1rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +14,7 @@ header p strong {
 }
 
 .post-title {
-    background: black;
+    background: #bf3a5d;
     margin: 10rem 0;
     color: white;
     padding: 2rem;
@@ -21,7 +22,7 @@ header p strong {
 }
 
 a,a:visited {
-  color: black;
+  color: #bf3a5d;
   font-weight: bold;
 
   &:hover {
@@ -30,7 +31,7 @@ a,a:visited {
 }
 
 a.active {
-    background: black;
+    background: #bf3a5d;
     padding: 0.5rem;
     color: white;
     font-weight: bold;

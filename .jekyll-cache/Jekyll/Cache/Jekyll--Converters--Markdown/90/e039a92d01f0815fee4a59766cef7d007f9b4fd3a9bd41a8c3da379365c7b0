@@ -1,0 +1,189 @@
+I"�.<h1 id="overview">Overview</h1>
+<p>DRFT (Ɖ) is a <strong>commons currency</strong> for sharing resources among broad groups of people. The currency incentivizes management of otherwise private resources as <em>common pool resources</em><sup id="fnref:1" role="doc-noteref"><a href="#fn:1" class="footnote">1</a></sup>, in a way that provides greater security, and net greater access to resources, than participants would have otherwise.</p>
+
+<p>DRFT uses market demand to trigger the minting of new D, decentralizing trust requirements for participation. It then pools the income earned across all resources and redistributes it to participating members, in a way that helps underwrite the risk of providing access.</p>
+
+<p>Internally, the DRFT currency asserts a logic that values one night of accommodation equally, anywhere in the system <sup id="fnref:2" role="doc-noteref"><a href="#fn:2" class="footnote">2</a></sup>. Although a night in the country is often cheaper than a night in the city, and costs of living differ around the world, this assertion intentionally shifts value exchange outside the speculative real estate market, prioritizes mobility and access, and creates space for other forms of value to be cultivated, such as culture and community.</p>
+
+<p>DRFT Features</p>
+
+<ul>
+  <li>mutualizes resources</li>
+  <li>underwrites risk</li>
+  <li>creates a commons</li>
+  <li>decentralized participation</li>
+</ul>
+
+<p>We can also think of DRFT as a “housing-backed currency.” Such currency can be used for many things, and is not limited to trading for housing, but can also be traded in arbitrary ways (mostly outside the scope of this article). Like all currencies, whether a secondary market arises is a function of many things.</p>
+
+<p>If you’d like to read about the technical details, read on!</p>
+
+<h1 id="details">Details</h1>
+
+<p>Consider the use of DRFT in a network of independent houses, each with some number of bedrooms. Those rooms have primary residents, who may opt to make their room available to guests when they travel. Each may independently decide whether to participate in the DRFT system (we will show that the system works fluidly with both).</p>
+
+<h2 id="terminology">Terminology</h2>
+
+<ul>
+  <li>Guest - a person paying with fiat currency</li>
+  <li>Member - a person who has added their room to the DRFT system, will accept Ɖ for payment and is usually paying with Ɖ for their stays.</li>
+  <li>Host - someone who hosted either a guest or a member on a given night.</li>
+</ul>
+
+<h1 id="earning-and-minting-drft">Earning and Minting DRFT</h1>
+
+<p>Members earn Ɖ by hosting guests <em>or</em> members: your account is credited Ɖ1 for each night that a member <em>or</em> paying guest stays with you (more on that below), and debited one Ɖ for every night that member stays elsewhere in the network.</p>
+
+<p>Although anyone can sign up, people have to choose to stay in your space, for you to earn Ɖ.</p>
+
+<p>Of course, this alone would result in an incentive to host paying guests over members, since a host effectively earns twice from paying guests (Ɖ and $).</p>
+
+<h2 id="proportional-distribution">Proportional distribution</h2>
+<p>To address this, we shift some of the dollar income from the <em>guest</em> host to the
+<em>member</em> host by pooling guest income earned in hard currency, at the network
+level, and re-distributing it amongst all hosts. These distributions are issued
+<strong>in proportion to the cost of the room</strong>. (More on this in the incentives
+section). So if your room is 1/3 the price of another room, your distribution
+would be scaled appropriately. This means you earn less from a paying guest, on
+a given night, than you would in a vanilla system (because some of it is
+distributed to other hosts); on the other hand, you earn something <em>every</em>
+night there are paying guests in the network, even if you only hosted a member
+who paid with Ɖ.</p>
+
+<p>Example: Let’s say host A has a guest room priced at $100, host B has a guest
+room priced at $50, and host C has a guest room priced at $25. On a given
+night, host A receives a paying guest, and, meanwhile, a member stays with host
+B. Thus Host A brought in $100 in “hard currency.” Host A and B each earn one
+Ɖ, and host C earns $0 and Ɖ0. The total <em>value</em> used that night is $150 ($100
+for room A and $50 for room B).</p>
+
+<p>Again, the distribution is <em>proportional</em> to the room cost: Host A’s room at $100 is <sup>2</sup>/<sub>3</sub> of that value, and Host B’s room is <sup>1</sup>/<sub>3</sub> of that value. So Host A receives <sup>2</sup>/<sub>3</sub>*$100, and Host B receives <sup>1</sup>/<sub>3</sub>*$100. Host C receives $0.</p>
+
+<div class="img_row_full_height">
+    <img class="col three" src="/img/drft_proportional_distribution_simple.jpg" alt="" title="room backing calculator" />
+</div>
+
+<h1 id="controlling-supply">Controlling Supply</h1>
+
+<p>The currency supply needs to be controlled, or the above algorithm will be
+highly inflationary. This is something that has not been decided on yet, as the
+dynamics of the system are not entirely clear. Demurage is one option, as are
+earning caps.</p>
+
+<p>For demurage, one approach could be designing Ɖ to expire as a function of age,
+as a way to incentivize use. Alternatively, each time there is a proportional
+distribution, it could trigger a re-valuation of existing Ɖ (this is likely to
+result in fractional Ɖ, which feels inelegant, but it’s not clear this is a
+sufficient reason to avoid this solution).</p>
+
+<p>The number of Ɖ one can hold at any time could also be capped, by the volume
+(supply) a host adds to the system.</p>
+
+<p>As the currency is developed, users and hosts will be consulted on what
+approach best reflects the goals of the system.</p>
+
+<p><strong>Leaving the system</strong>
+If members decide to de-list their resource, what should happen with their DRFT
+supply? Since we are not preventing the exchange of Ɖ outside its use for
+housing, we dont have a reason to ‘take back’ anyone’s supply of Ɖ. Most
+likely, this would be handled by the general demurage algorithm which will be
+running anyway, and taking into account these and other changes in supply and
+demand.</p>
+
+<h1 id="discussion-incentives-and-gaming">Discussion: Incentives and Gaming</h1>
+
+<ul>
+  <li>
+    <p><strong>Pricing</strong>: Is there a perverse incentive to set the price low, in order to
+earn DRFT? Each member sets their own price. If they set the price low, then
+their proportional distribution will be also be commensurately low. If they
+set the price high, their proportional share will be higher, but it can only
+go as high as the market will bear. Pricing should also take into account
+operational costs such as turning over beds, cleaning, etc.</p>
+  </li>
+  <li>
+    <p><strong>Is there a perverse incentive to accept a paying guest over a DRFT
+member?</strong> No, because guest income is distributed across all hosts, not just
+those hosting paying guests.</p>
+  </li>
+  <li>
+    <p><strong>I have the most expensive room in the network. Don’t I ‘lose’ by this
+scheme?</strong> Well, it’s hard to do an apples to apples comparison, but the most
+expensive room still always earns both Ɖ and hard currency. Other rooms may
+have a lower equivalent dollar value, but remember that as the most expensive
+room in the network you are also earning the highest proportional
+distribution as well. The basic idea is that, as long as people value the
+resources in the system, then one can <em>always only win or break even</em>,
+because one can always stay <em>anywhere</em> in the network for one Ɖ, <em>and</em> you
+earn a distribution as well.</p>
+  </li>
+  <li>
+    <p><strong>Bias towards paying guests?</strong> The system does have a slight bias globally towards accepting paying guests
+over using up all supply with DRFT members only. This will be interesting to
+see, but the counter-balancing factor is that the whole reason for the system
+is for members to have access to housing. The hypothesis is that this will be enough.</p>
+  </li>
+  <li>
+    <p><strong>Quality</strong>: What if someone adds a low or zero value resource just to earn
+Ɖ? This is addressed by the underlying market dynamics, which requires paying
+guests to choose the room, before any Ɖ can be earned.</p>
+  </li>
+  <li>
+    <p><strong>Comps</strong>: If a host offers a complimentary stay to an otherwise paying guest, no
+DRFT should be minted, and the room will not earn a proportional distribution
+from that night. Otherwise, a host could simply offer comps constantly (even
+without people actually staying there), mint unlimited DRFT, and receive
+constant proportional distributions.</p>
+  </li>
+  <li>
+    <p><strong>Sybil attack/collusion scheme</strong> (fake accounts or fake stays): There is a
+scenario where two users decide to stay in each others’ rooms, essentially
+swapping and earning Ɖ + proportional distributions. In this case however,
+they would also be <em>spending</em> Ɖ1 each night, so their net earnings would only
+occur through proportional distributions. This is still a real concern.</p>
+  </li>
+  <li>
+    <p><strong>Bribes</strong> Another similar scenario is where a host bribes someone to stay
+with them using an out of band agreement. The host would pay the 3rd party
+guest under the table, which that guest would use to pay the host, and in so
+doing cause Ɖ and proportional distributions to be issued to the host. The
+host would then pay the colluding individual some fraction of the earnings
+for their trouble. However, in this case, the earnings would be subject to
+proportional distribution, so the host would actually be <em>losing</em> money, but
+earning (minting) Ɖ. The incentive here would be strongest for a location
+where the hard currency price is low, and the relative value of a Ɖ is high.
+However, this person would then be losing an even larger fraction of their
+hard income to proportional distribution, and would need to travel to places
+where the value of their Ɖ is high enough to be worth it. It is not clear how
+significant an issue this is likely to be.</p>
+  </li>
+  <li>
+    <p><strong>Sublet</strong>: When does a booking count as a sublet instead of a guest stay?
+There is a trade off for the room bacjer: if they want their sublet to be
+subject to PD then this is up to them. It is expected that, more likely with
+longer term stays, the arrangement would be organized outside the DRFT
+system. However, a nicety is that any medium/long term guest could themselves
+become the effective ‘resident’ guaranteeing the room.</p>
+  </li>
+</ul>
+
+<h1 id="thanks">Thanks</h1>
+
+<p>Thanks to extensive discussion and feedback from Craig Ambrose, Robbie Schingler,
+Zarinah Agnew, Juliana Lopker, Anouk Ruha, Kristen Berman, Phil Levin, Brittany
+Ferrero, Kyle Stewart, Jay Standish, Stefan Sullivan, James Lewis, Jeff
+Andreoni (Bezdomny), and various others.</p>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>This may be a generous interpretation of the <a href="https://en.wikipedia.org/wiki/Common-pool_resource">definition of CPR</a>, it will remain to be seen. Here, the subtractable core resource is housing, the fringe units are accommodation nights, and the potential for abuse consists in the possibility that managing these housing resources as a commons is difficult to police, and can be overused by individuals in a way the degrades the quantity or quality of access for others. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+    <li id="fn:2" role="doc-endnote">
+      <p>It is important that resources are <em>valued</em> by participants of the system as a barrier to entry. Details will be discussed below. <a href="#fnref:2" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+:ET
