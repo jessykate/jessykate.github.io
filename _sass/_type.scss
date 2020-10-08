@@ -1,5 +1,7 @@
+$text-color: #67152a;
+
 body {
-  color: #bf3a5d;
+  color: $text-color;
   font-size: 1rem;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -14,7 +16,7 @@ header p strong {
 }
 
 .post-title {
-    background: #bf3a5d;
+    background: $text-color;
     margin: 10rem 0;
     color: white;
     padding: 2rem;
@@ -22,13 +24,15 @@ header p strong {
 }
 
 a,a:visited {
-  color: #bf3a5d;
-  font-weight: bold;
+  color: $text-color;
+  text-decoration-color: #67152a69;
 
   &:hover {
     color: dodgerblue;
   }
 }
+
+
 
 a.active {
     background: #bf3a5d;

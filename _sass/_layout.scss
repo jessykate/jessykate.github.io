@@ -15,7 +15,7 @@ strong, b, h1, h2, h3, h4 {
 }
 
 hr {
-    background:#bf3a5d;
+    background:#67152a;
     border: 0;
     height: 2px;
     margin: 2rem 0;
@@ -60,3 +60,12 @@ nav {
 footer {
     margin: 2rem 0;
 }
+
+.card {
+    padding: 10px;
+    margin-bottom: 30px;
+}
+
+.card:nth-child(even) {background: #dcdc33}
+.card:nth-child(odd) {background: #00e7ff}
+
